@@ -1,0 +1,54 @@
+<div class="container">
+  <div style="margin-left:60px; margin-top: 20px;">
+    <button mat-stroked-button class="custom-button" (click)="backTo()">Home Page</button>
+  </div>
+  <div class="content">
+    <aside class="sidebar">
+      <div class="profile-pic">
+        <img src="https://www.svgrepo.com/show/323656/wireframe-globe.svg" alt="Profile Picture" width="100"
+          height="100">
+      </div>
+      <div class="details" *ngIf="character">
+        <p class="text-color"><strong>Name: {{character.name}} </strong></p>
+        <p class="text-color"><strong>Born: {{character.birth_year}}</strong></p>
+        <p class="text-color"><strong>Gender: {{character.gender}}</strong></p>
+        <p class="text-color"><strong>Height: {{character.height}}</strong></p>
+        <p class="text-color"><strong>Created at: {{character.created | date:'medium'}} </strong></p>
+        <p class="text-color"><strong>Edited at: {{character.edited | date:'medium'}} </strong></p>
+        <p class="text-color"><strong>Hair color: {{character.hair_color}} </strong></p>
+        <p class="text-color"><strong>Eye color: {{character.eye_color}}</strong></p>
+        <p class="text-color"><strong>Skin color: {{character.skin_color}}</strong></p>
+        <p class="text-color"><strong>Species:{{character.species}}</strong></p>
+      </div>
+    </aside>
+    <main class="main-content" *ngIf="characterData$ |async as character">
+      <section class="films">
+        <h2 class="main-content">FILMS</h2>
+        <div class="card" *ngFor="let movie of character.films">
+          <p>Title: {{movie.title}}</p>
+          <p>Director: {{movie.director}}</p>
+          <p>Producer: {{movie.producer}}</p>
+          <p>Release Date: {{movie.release_date}}</p>
+        </div>
+      </section>
+      <section class="vehicles" *ngIf="character.vehicles.length>0">
+        <h2>VEHICLES</h2>
+        <div class="card" *ngFor="let vehicle of character.vehicles">
+          <p>Name: {{vehicle.name}}</p>
+          <p>{{vehicle.manufacturer}}</p>
+          <p>{{vehicle.model}}</p>
+          <p>{{vehicle.consumables}}</p>
+        </div>
+      </section>
+      <section class="starships" *ngIf="character.starships.length>0">
+        <h2>STARSHIPS</h2>
+        <div class="card" *ngFor="let starship of character.starships">
+          <p>{{starship.name}}</p>
+          <p>{{starship.manufacturer}}</p>
+          <p>{{starship.model}}</p>
+          <p>{{starship.consumables}}</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>

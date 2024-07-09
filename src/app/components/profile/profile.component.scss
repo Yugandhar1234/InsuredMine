@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.project-name {
+  font-size: 1em;
+}
+
+.content {
+  display: flex;
+  padding: 20px;
+  margin: 20px;
+}
+
+.sidebar {
+  width: 18%;
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile-pic {
+  background-color: #edf3f3;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.details {
+  padding: 20px;
+}
+
+.details p {
+  margin: 0px 20px;
+  font-size: 1em;
+}
+
+.main-content {
+  margin: 20px;
+  width: 82%;
+  padding: 0 20px;
+  background-color: #ffffff;
+}
+
+.main-content section {
+  margin-bottom: 20px;
+}
+
+.main-content h2 {
+  color: #00856a;
+  padding: 10px;
+  margin: 0;
+}
+
+.card {
+  background-color: #e6e6e6;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+* {
+  color: #989898;
+  font-family: cursive;
+}
+.custom-button {
+  border-color: blue !important;
+  background-color: #edf3f3;
+}
